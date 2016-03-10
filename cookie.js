@@ -17,7 +17,9 @@ var cookie = (function(cookie) {
 			d.setTime(d.getTime() + exp * 60 *1000); // в минутах
 			exp = props.expires = d;
 		}
-		if(exp && exp.toUTCString) { props.expires = exp.toUTCString(); }
+		if (exp && exp.toUTCString) { props.expires = exp.toUTCString(); }
+		if (!props.domain) props.domain = "." + document.location.hostname;
+		if (!props.path) props.path = "/";
 
 		value = encodeURIComponent(value);
 		var updatedCookie = name + "=" + value;
