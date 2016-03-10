@@ -31,7 +31,7 @@ var cookie = (function(cookie) {
 	};
 
 	self.delete = function(name) {
-	  self.set(name, "", { expires: -1, path: "/", domain: ".fotovramke.com" });
+	  self.set(name, "", { expires: -1, path: "/", domain: "." + document.location.hostname });
 	};
 
 
